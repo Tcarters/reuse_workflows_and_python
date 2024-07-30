@@ -33,8 +33,9 @@ jobs:
             echo "result=success" >> $GITHUB_OUTPUT
           else
             echo "result=failure" >> $GITHUB_OUTPUT
+          fi
         # outputs:
-        #   result: ${{ env.result }}
+        #     result: ${{ env.result }}
 
   job2:
     runs-on: ubuntu-latest

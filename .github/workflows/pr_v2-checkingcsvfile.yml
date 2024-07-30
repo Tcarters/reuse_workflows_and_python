@@ -1,4 +1,4 @@
-name: Py-Script-on-Workflow
+name: Py-Script-on-Workflow-v2
 
 on:
     workflow_dispatch

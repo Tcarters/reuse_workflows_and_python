@@ -1,4 +1,4 @@
-name: Python Script Execution Workflow
+name: Py-Script-on-Workflow
 
 on:
     workflow_dispatch

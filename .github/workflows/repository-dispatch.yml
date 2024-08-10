@@ -1,0 +1,30 @@
+name: Send-event-repository
+
+on:
+    workflow_dispatch:
+        inputs:
+            MY_NAME:
+              description: "Who to greet"
+              required: true
+              default: "hopper"
+
+jobs:
+    job-sending-event:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Sending an event
+              run: |
+
+                    curl \
+                        -X POST \
+                        -H "Accept: application/vnd.github.v3+json" \
+                        https://api.github.com/repos/tcarters/reuse_workflows_and_python/dispatches \
+                        -d 
+                        '{ \
+                            "event_type":"send_name",
+                            "client_payload": {
+                                "data": ' "${{ env.input_data }}" '
+                                }
+                         }'
+              env:
+                input_data: ${{ github.event.inputs.MY_NAME }}

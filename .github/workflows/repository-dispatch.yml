@@ -18,6 +18,7 @@ jobs:
                     curl \
                         -X POST \
                         -H "Accept: application/vnd.github.v3+json" \
+                        -H "Authorization: Bearer ${{ secrets.TOKEN_GIT }}" \
                         https://api.github.com/repos/tcarters/reuse_workflows_and_python/dispatches \
                         -d  \
                             '{  "event_type":"send_name", "client_payload": { "data": "${{ env.input_data }}" } }'

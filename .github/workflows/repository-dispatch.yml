@@ -1,5 +1,4 @@
 name: Send-event-repository
-
 on:
     workflow_dispatch:
         inputs:
@@ -12,6 +11,7 @@ jobs:
     job-sending-event:
         runs-on: ubuntu-latest
         steps:
+            # # The TOKEN used in the curl here is defined in the associated github user account
             - name: Sending an event
               run: |
 
